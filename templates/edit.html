@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <title>แก้ไขเนื้อหา</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <h2>แก้ไขเนื้อหา</h2>
+  <form method="POST">
+    <label>หัวข้อ</label>
+    <input type="text" name="title" value="{{ content['title'] }}" required />
+
+    <label>เนื้อหา</label>
+    <textarea name="body" required>{{ content['body'] }}</textarea>
+
+    <button type="submit">บันทึก</button>
+  </form>
+  <p><a href="{{ url_for('dashboard') }}">กลับไปแดชบอร์ด</a></p>
+</body>
+</html>

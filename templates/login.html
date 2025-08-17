@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <title>เข้าสู่ระบบแอดมิน</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <h2>เข้าสู่ระบบแอดมิน</h2>
+  {% if error %}
+    <p style="color:red;">{{ error }}</p>
+  {% endif %}
+  <form method="POST">
+    <label>ชื่อผู้ใช้</label>
+    <input type="text" name="username" placeholder="ชื่อผู้ใช้" required />
+
+    <label>รหัสผ่าน</label>
+    <input type="password" name="password" placeholder="รหัสผ่าน" required />
+
+    <button type="submit">เข้าสู่ระบบ</button>
+  </form>
+</body>
+</html>
